@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baitap</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+       
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="labs.html">Labs</a>
+        </div>
+        <section>
+            <form onsubmit="handleLogin(event)">
+                <h1>Login</h1>
+                <div class="inputbox">
+                    <input type="email" required>
+                    <label for="">Email</label>
+                </div>
+                <div class="inputbox">
+                    <input type="password" required>
+                    <label for="">Password</label>
+                </div>
+                <div class="forgot">
+                    <label for=""><input type="checkbox">Remember Me</label>
+                    <a href="#">Forgot password</a>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </section>
+    
+        <script>
+            function handleLogin(event){
+                event.preventDefault();
+                window.location.href="tasks.html";
+            }
+        </script>
+
+       
+
+    </div>
+</body>
+</html>
