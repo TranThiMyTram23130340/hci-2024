@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tasks</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+       
+        <div class="menu">
+            <a href="index.html" class="home-link">Home</a>
+            <a href="about.html" class="about-link">About</a>
+            <a href="labs.html" class="labs-link">Tabs</a>
+        </div>
+        <section id="dashboerdScreen">
+            <h1>Các bài tập có sẵn</h1>
+            <div class='filter-section'>
+                <label for="languageFilter">Lọc theo ngôn ngữ:</label>
+                <select id="languageFilter" onchange="filterExcersive()">
+                    <option value="all">All</option>
+                    <option value="c">C</option>
+                    <option value="python">Python</option>
+                    <option value="java">Java</option>
+                </select>
+                <input type="text" id="search" placeholder="Tìm kiếm bài tập" oninput="searchExercise()">
+
+            </div>
+            <section id="exerciseList">
+                <h2>Ngôn ngữ C</h2>
+                <div class="exercise">
+                    <h3>Bài tập 1: Kiểm tra số nguyên tố</h3>
+                    <p>Độ khó: Dễ | Giới hạn thời gian: 30 phút | Điểm: 10</p>
+                    <button onclick="startExercise('C',1)">Bắt đầu làm bài</button>
+                </div>
+                <div class="exercise">
+                    <h3>Bài tập 2: Tính giai thừa</h3>
+                    <p>Độ khó: Dễ | Giới hạn thời gian: 30 phút | Điểm: 10</p>
+                    <button onclick="startExercise('C',2)">Bắt đầu làm bài</button>
+                </div>
+
+                <h2>Ngôn ngữ Python</h2>
+                <div class="exercise">
+                    <h3>Bài tập 1: Kiểm tra số chẵn</h3>
+                    <p>Độ khó: Dễ | Giới hạn thời gian: 10 phút | Điểm: 10</p>
+                    <button onclick="startExercise('C',1)">Bắt đầu làm bài</button>
+                </div>
+                <div class="exercise">
+                    <h3>Bài tập 2: Đếm số từ trong chuỗi</h3>
+                    <p>Độ khó: Trung bình | Giới hạn thời gian: 40 phút | Điểm: 10</p>
+                    <button onclick="startExercise('C',2)">Bắt đầu làm bài</button>
+                </div>
+
+                <h2>Ngôn ngữ Java</h2>
+                <div class="exercise">
+                    <h3>Bài tập 1: Tính chuỗi số</h3>
+                    <p>Độ khó: Dễ | Giới hạn thời gian: 20 phút | Điểm: 10</p>
+                    <button onclick="startExercise('C',1)">Bắt đầu làm bài</button>
+                </div>
+                <div class="exercise">
+                    <h3>Bài tập 2: kiểm tra đối xứng</h3>
+                    <p>Độ khó: Khó | Giới hạn thời gian: 50 phút | Điểm: 10</p>
+                    <button onclick="startExercise('C',2)">Bắt đầu làm bài</button>
+                </div>
+
+            </section>
+            
+        </section>
+    </div>
+
+    <script>
+         function startExercise(language, exerciseId) {
+            window.location.href = `Coding.html?lang=${language}&id=${exerciseId}`; // Chuyển đến trang coding
+        }
+
+        function filterExercises() {
+            const filter = document.getElementById('languageFilter').value;
+            const exercises = document.querySelectorAll('.exercise');
+            exercises.forEach(exercise => {
+                if (filter === 'all' || exercise.innerHTML.toLowerCase().includes(filter)) {
+                    exercise.style.display = 'block';
+                } else {
+                    exercise.style.display = 'none';
+                }
+            });
+        }
+
+        function searchExercises() {
+            const searchValue = document.getElementById('search').value.toLowerCase();
+            const exercises = document.querySelectorAll('.exercise');
+            exercises.forEach(exercise => {
+                if (exercise.innerHTML.toLowerCase().includes(searchValue)) {
+                    exercise.style.display = 'block';
+                } else {
+                    exercise.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
