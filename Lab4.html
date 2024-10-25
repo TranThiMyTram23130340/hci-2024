@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Learning Layout</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        font-size: 50px;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        background-color: #fff;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .tab {
+        padding: 10px;
+        text-decoration: none;
+        color: #333;
+        display: flex;
+        align-items: center;
+    }
+
+    .tab i {
+        margin-right: 8px;
+    }
+
+    .tab:hover {
+        background-color: #f0f0f0; /* Hiệu ứng khi di chuột */
+        border-radius: 5px; /* Bo góc khi hover */
+    }
+
+    .header-btn {
+        padding: 10px 20px;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        font-size: 50px;
+    }
+
+    .header-btn i {
+        margin-right: 8px;
+    }
+
+    .header-btn:hover {
+        background-color: #0056b3; /* Hiệu ứng khi hover */
+    }
+
+    .main-content {
+        display: flex;
+        margin: 20px;
+    }
+
+    .left-column {
+        flex: 1;
+    }
+
+    .right-column {
+        flex: 1;
+        margin-left: 20px;
+    }
+
+    .video-container video {
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    .video-tabs {
+        display: flex;
+        margin: 20px 0;
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    .video-tab {
+        flex: 1;
+        text-align: center;
+        padding: 10px;
+        text-decoration: none;
+        color: #333;
+        background-color: #f0f0f0;
+        margin-right: 5px;
+        border-radius: 8px;
+    }
+
+    .video-tab:hover {
+        background-color: #ddd;
+    }
+
+    .video-title {
+        margin: 20px 0;
+        padding: 0 20px;
+    }
+
+    .video-info,
+    .update-info {
+        padding: 0 20px;
+        margin-bottom: 10px;
+    }
+
+    .video-info .rating {
+        display: flex;
+        align-items: center;
+    }
+
+    .video-info .rating i {
+        color: gold; /* Màu vàng cho sao */
+        margin-right: 3px;
+    }
+
+    .what-you-learn {
+        padding: 20px; /* Padding bên trong khung */
+        margin-top: 20px;
+        background-color: #f0f0f0; /* Màu nền cho khung */
+        border-radius: 8px; /* Bo góc khung */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng cho khung */
+        border: 1px solid #ddd; /* Đường viền cho khung */
+    }
+
+    .learn-grid {
+        display: flex; /* Hiển thị cột */
+        justify-content: space-between; /* Căn chỉnh không gian giữa các mục */
+        margin-top: 10px; /* Khoảng cách trên */
+    }
+
+    .learn-grid div {
+        display: flex;
+        align-items: center; /* Canh giữa */
+        margin-bottom: 10px; /* Khoảng cách giữa các mục */
+        width: 48%; /* Chiều rộng của mỗi cột */
+    }
+
+    .learn-grid div i {
+        margin-right: 10px; /* Khoảng cách giữa biểu tượng và văn bản */
+    }
+
+    /* Phần right column - Nội dung khóa học và các section */
+    .right-column {
+        margin-left: 20px;
+    }
+
+    .right-column h3 {
+        margin-bottom: 10px;
+    }
+
+    .right-column p {
+        margin-bottom: 20px;
+    }
+
+    .section {
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+    }
+
+    .section img {
+        width: 100px;
+        height: 70px;
+        border-radius: 8px;
+        margin-right: 10px;
+    }
+
+    .section p {
+        margin: 0;
+        font-size: 50px;
+    }
+
+    </style>
+</head>
+<body>
+    <!-- Dòng 1: Tabs và Buttons -->
+    <div class="header">
+        <a href="#" class="tab"><i class="fas fa-home"></i> Home</a>
+        <a href="#" class="tab"><i class="fas fa-title"></i> Login in HTML</a>
+        <a href="#" class="tab"><i class="fas fa-star"></i> Leave a Rating</a>
+        <a href="#" class="tab"><i class="fas fa-chart-progress"></i> Your Progress</a>
+        <button class="header-btn"><i class="fas fa-share-alt"></i> Sharing</button>
+        <button class="header-btn"><i class="fas fa-ellipsis-v"></i></button> <!-- Nút với dấu 3 chấm -->
+    </div>
+
+    <!-- Dòng 2: Video bên trái và nội dung khóa học + các section bên phải -->
+    <div class="main-content">
+        <div class="left-column">
+            <div class="video-container">
+                <video controls>
+                    <source src="Login in HTML.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <!-- Dòng 3: Tabs bên trái -->
+            <div class="video-tabs">
+                <a href="#" class="video-tab">Overview</a>
+                <a href="#" class="video-tab">Q&A</a>
+                <a href="#" class="video-tab">Notes</a>
+                <a href="#" class="video-tab">Announcements</a>
+                <a href="#" class="video-tab">Reviews</a>
+                <a href="#" class="video-tab">Learning Tools</a>
+            </div>
+
+            <!-- Dòng 4: Tiêu đề video -->
+            <div class="video-title">
+                <h2>Login in HTML</h2>
+            </div>
+
+            <!-- Dòng 5: Rating, Students, Total -->
+            <div class="video-info">
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <strong> 4.6/5</strong> | <strong>Students:</strong> 26,379 | <strong>Total:</strong> 50.5 hours
+                </div>
+            </div>
+
+            <!-- Dòng 6: Ngày cập nhật -->
+            <div class="update-info">
+                <p><strong>Last updated:</strong> November 2023</p>
+            </div>
+
+            <!-- Dòng 7: What You'll Learn (chia làm 2 cột và bọc bởi khung ngoài) -->
+            <div class="what-you-learn">
+                <h3>What you'll learn</h3>
+                <div class="learn-grid">
+                    <div>
+                        <i class="fas fa-check"></i> <!-- Biểu tượng dấu tích -->
+                        <p>Become an expert in MuleSoft ESB</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-check"></i>
+                        <p>Step-by-step coding explanation</p>
+                    </div>
+                </div>
+                <div class="learn-grid">
+                    <div>
+                        <i class="fas fa-check"></i>
+                        <p>Learn to develop, design, and manage projects</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-check"></i>
+                        <p>Gain real-time project experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nội dung khóa học và các section bên phải -->
+        <div class="right-column">
+            <h3>Course Content</h3>
+            <p>An HTML login form allows users to input credentials (username and password) to access a website or application. It typically includes two input fields for the username and password, and a submit button.</p>
+            
+            <h3>Sections</h3>
+            <div class="section">
+                <img src="thumbnail1.jpg" alt="Section 1">
+                <p>Introduction to Integration (8 min)</p>
+                            </div>
+            <div class="section">
+                <img src="thumbnail2.jpg" alt="Section 2">
+                <p>Mule API Development Life Cycle (4 min)</p>
+            </div>
+            <div class="section">
+                <img src="thumbnail3.jpg" alt="Section 3">
+                <p>Course Resources (1 min)</p>
+            </div>
+            <div class="section">
+                <img src="thumbnail4.jpg" alt="Section 4">
+                <p>Basic Transformations (1hr 2min)</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
