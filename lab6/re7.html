@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Goals</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            background-color: #f5f6fa;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1200px;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+
+        .left-column {
+            width: 50%;
+            padding: 20px;
+            border-right: 1px solid #e0e0e0;
+        }
+
+        .right-column {
+            width: 50%;
+            padding: 20px;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .goal-card {
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 2px solid #e0e0e0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .goal-card.highlighted {
+            border-color: #6b5bfc;
+        }
+
+        .goal-card i {
+            font-size: 24px;
+            color: #6b5bfc;
+        }
+
+        .goal-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .goal-card p {
+            color: #666;
+        }
+
+        .goal-card .enterprise-badge {
+            font-size: 12px;
+            color: #6b5bfc;
+            border: 1px solid #6b5bfc;
+            padding: 2px 5px;
+            border-radius: 4px;
+            margin-left: 5px;
+        }
+
+        .goal-card a {
+            color: #6b5bfc;
+            font-size: 14px;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        .macos-window {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
+            width: 100%;
+        }
+
+        .macos-title-bar {
+            height: 24px;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .macos-title-bar .buttons {
+            display: flex;
+            gap: 6px;
+        }
+
+        .macos-title-bar .button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .macos-title-bar .button.close {
+            background-color: #ff5f57;
+        }
+
+        .macos-title-bar .button.minimize {
+            background-color: #ffbd2e;
+        }
+
+        .macos-title-bar .button.maximize {
+            background-color: #28c940;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #6b5bfc;
+            text-align: center;
+            /* Centering the title */
+            margin: 10px 0;
+        }
+
+        .timer {
+            text-align: center;
+            /* Centering the timer */
+            font-size: 14px;
+            color: #666;
+            margin: 10px 0;
+        }
+
+        .score-card {
+            background-color: #f5f6fa;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .score-card h2 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .chart {
+            margin-top: 20px;
+            width: 100%;
+            height: 200px;
+            background-color: #f0f0ff;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chart .progress-line {
+            width: 80%;
+            height: 2px;
+            background-color: #ddd;
+            position: relative;
+        }
+
+        .chart .progress-point {
+            position: absolute;
+            left: 60%;
+            top: -5px;
+            background-color: #6b5bfc;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .chart .score-text {
+            position: absolute;
+            right: 20px;
+            top: -30px;
+            font-size: 14px;
+            color: #6b5bfc;
+        }
+
+        .score-summary {
+            margin-top: 20px;
+            color: #6b5bfc;
+            font-size: 14px;
+            background-color: #f0f0ff;
+            /* Màu nền cho khung */
+            border: 1px solid #6b5bfc;
+            /* Đường viền cho khung */
+            padding: 10px;
+            /* Khoảng cách bên trong khung */
+            border-radius: 8px;
+            /* Bo tròn các góc của khung */
+            display: flex;
+            /* Sử dụng flexbox để căn giữa biểu tượng và văn bản */
+            align-items: center;
+            /* Căn giữa theo chiều dọc */
+        }
+
+        .score-summary i {
+            margin-right: 8px;
+            /* Khoảng cách giữa biểu tượng và văn bản */
+            color: #6b5bfc;
+            /* Màu sắc cho biểu tượng */
+        }
+
+        .answers-section {
+            margin-top: 20px;
+        }
+
+        .answers-header {
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .filters {
+            display: flex;
+            gap: 10px;
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+            justify-content: center;
+            /* Centering the filters */
+        }
+
+        .filters span {
+            border: 1px solid #ddd;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .filters .active {
+            border-color: #6b5bfc;
+            color: #6b5bfc;
+        }
+
+        .questions {
+            margin-top: 10px;
+        }
+
+        .question {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .question.correct {
+            border-left: 4px solid #6b5bfc;
+        }
+
+        .question.incorrect {
+            border-left: 4px solid #fc5b5b;
+        }
+
+        .question i {
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+        .question.correct i {
+            color: #6b5bfc;
+        }
+
+        .question.incorrect i {
+            color: #fc5b5b;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Left Column -->
+        <div class="left-column">
+            <div class="title">Learning focused on your goals</div>
+
+            <div class="goal-card highlighted">
+                <i class="fas fa-hands-helping"></i>
+                <div>
+                    <h3>Hands-on training</h3>
+                    <p>Upskill effectively with AI-powered coding exercises, practice tests, and quizzes.</p>
+                </div>
+            </div>
+
+            <div class="goal-card">
+                <i class="fas fa-certificate"></i>
+                <div>
+                    <h3>Certification prep</h3>
+                    <p>Prep for industry-recognized certifications by solving real-world challenges and earn badges
+                        along the way.</p>
+                </div>
+            </div>
+
+            <div class="goal-card">
+                <i class="fas fa-chart-line"></i>
+                <div>
+                    <h3>Insights and analytics <span class="enterprise-badge">Enterprise Plan</span></h3>
+                    <p>Fast-track goals with advanced insights plus a dedicated customer success team to help drive
+                        effective learning.</p>
+                    <a href="#">Find out more →</a>
+                </div>
+            </div>
+
+            <div class="goal-card">
+                <i class="fas fa-cog"></i>
+                <div>
+                    <h3>Customizable content <span class="enterprise-badge">Enterprise Plan</span></h3>
+                    <p>Create tailored learning paths for team and organization goals and even host your own content and
+                        resources.</p>
+                    <a href="#">Find out more →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="right-column">
+            <div class="macos-window">
+                <div class="macos-title-bar">
+                    <div class="buttons">
+                        <div class="button close"></div>
+                        <div class="button minimize"></div>
+                        <div class="button maximize"></div>
+                    </div>
+                    <span style="flex-grow: 1; text-align: center;"></span>
+                </div>
+                <div class="section-title">Containerization</div>
+                <div class="timer">Time taken: 15 minutes</div>
+                <div class="score-card">
+                    <h2>Your score: 159</h2>
+
+                    <!-- Chart Simulation -->
+                    <div class="chart">
+                        <div class="progress-line">
+                            <div class="progress-point"></div>
+                        </div>
+                        <div class="score-text">Superior</div>
+                    </div>
+
+                    <div class="score-summary">
+                        <i class="fas fa-lightbulb"></i> Your performance was better than 88% of learners
+                    </div>
+
+                    <!-- Answers Section -->
+                    <div class="answers-section">
+                        <div class="answers-header">Your answers</div>
+                        <div class="filters">
+                            <span class="active">All domains</span>
+                            <span>All answers</span>
+                            <span>23 correct</span>
+                            <span>7 incorrect</span>
+                            <span>0 skipped</span>
+                        </div>
+
+                        <div class="questions">
+                            <div class="question correct">
+                                <i class="fas fa-check-circle"></i>
+                                <div><strong>Question 1:</strong> Correct - Which of the following scenarios will
+                                    benefit most from a managed Kubernetes service, such as AWS EKS or Google Cloud’s
+                                    GKE?</div>
+                            </div>
+                            <div class="question correct">
+                                <i class="fas fa-check-circle"></i>
+                                <div><strong>Question 2:</strong> Correct - You containerized a web application, and one
+                                    of the containers is running the database engine...</div>
+                            </div>
+                            <div class="question incorrect">
+                                <i class="fas fa-times-circle"></i>
+                                <div><strong>Question 3:</strong> Incorrect - Which of the following strategies is best
+                                    to persist the data?</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
