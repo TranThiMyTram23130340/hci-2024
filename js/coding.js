@@ -103,7 +103,7 @@ const similarityScore = compareCodeSimilarity(code, correctAnswer);
 score = Math.floor(similarityScore * 100); // Tính điểm dựa trên độ tương đồng
 }
 
-window.location.href= `Score.html?score=${score}&correctAnswer=${encodeURIComponent(correctAnswers)}`;
+window.location.href= `score.html?score=${score}&correctAnswer=${encodeURIComponent(correctAnswers)}`;
 }
 
 // Hàm so sánh độ tương đồng giữa hai đoạn mã (dựa trên phần khớp)
