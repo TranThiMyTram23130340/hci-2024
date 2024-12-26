@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Management - Lab1</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/lab1.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="menu">
+            <a href="index.html" class="home-link">Home</a>
+            <a href="about.html" class="about-link">About</a>
+            <a href="labs.html" class="labs-link">Tabs</a>
+        </div>
+
+        <div class="content">
+            <h2>Course Management</h2>
+
+            <!-- Form tạo/ cập nhật khóa học -->
+            <form id="courseForm" class="course-form">
+                <!-- Course ID: Cho phép người dùng nhập -->
+                <div class="form-group">
+                    <label for="course_id">Course id:</label>
+                    <input type="text" id="course_id" name="course_id" placeholder="Enter course id" required autofocus>
+                </div>
+
+                <!-- Course Name: Bắt buộc nhập -->
+                <div class="form-group">
+                    <label for="course_name">Course name:</label>
+                    <input type="text" id="course_name" name="course_name" maxlength="255"
+                        placeholder="Enter course name" required>
+                </div>
+
+                <!-- Course Description: Tùy chọn -->
+                <div class="form-group">
+                    <label for="course_description">Course description:</label>
+                    <textarea id="course_description" name="course_description" rows="4"
+                        placeholder="Enter a detailed course description (optional)"></textarea>
+                </div>
+
+                <!-- Instructor: Chọn từ danh sách người dùng đã tạo -->
+                <div class="form-group">
+                    <label for="created_by">Lecturer:</label>
+                    <select id="created_by" name="created_by" required>
+                        <option value="">Choose a Lecturer</option>
+                        <option value="1">Nguyễn Thị Phương Trâm</option>
+                        <option value="2">Đặng Văn Quý</option>
+                        <option value="3">Trần Thị Thanh Nga</option>
+                    </select>
+                </div>
+
+                <!-- Created At: chỉ hiển thị, không chỉnh sửa -->
+                <div class="form-group">
+                    <label for="created_at">Creation Date:</label>
+                    <input type="text" id="created_at" name="created_at" value="Auto" readonly>
+                </div>
+
+                <!-- Updated At: chỉ hiển thị, không chỉnh sửa -->
+                <div class="form-group">
+                    <label for="updated_at">Last updated:</label>
+                    <input type="text" id="updated_at" name="updated_at" value="Auto-update" readonly>
+                </div>
+
+                <!-- Các nút hành động -->
+                <div class="form-actions">
+                    <button type="button" id="saveBtn">Save course</button>
+                    <button type="button" id="deleteBtn" class="delete-btn">Delete course</button>
+                </div>
+            </form>
+
+            <div id="notification"></div>
+        </div>
+        <div class="back-button" onclick="goBack()">
+            <i class="fas fa-arrow-left"></i> Back
+        </div>
+    </div>
+
+    <script src="js/lab1.js"></script>
+</body>
+
+</html>

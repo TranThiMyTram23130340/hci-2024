@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Learning</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/lab5.css">
+   
+</head>
+<body>
+
+    <div class="menu">
+        <a href="index.html" class="home-link">Home</a>
+        <a href="about.html" class="about-link">About</a>
+        <a href="labs.html" class="labs-link">Tabs</a>
+    </div>
+
+    <header>
+        <h1>My Learning</h1>
+        <div class="header-info">
+            <span>87hr 36min watched</span>
+            <a href="#">View all activity</a>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#" class="tab-link active" onclick="showTab('all-courses')">All courses</a></li>
+            <li><a href="#" class="tab-link" onclick="showTab('learning-paths')">Learning paths</a></li>
+            <li><a href="#" class="tab-link" onclick="showTab('certifications')">Certifications</a></li>
+            <li><a href="#" class="tab-link" onclick="showTab('archived')">Archived</a></li>
+            <li><a href="#" class="tab-link" onclick="showTab('learning-tools')">Learning tools</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <div id="all-courses" class="tab-content active">
+            <h2>All Courses</h2>
+            <p>Content for All Courses tab goes here.</p>
+        </div>
+        
+        <div id="learning-paths" class="tab-content">
+            <h2>Learning Paths</h2>
+            <p>Content for Learning Paths tab goes here.</p>
+        </div>
+        
+        <div id="certifications" class="tab-content">
+            <h2>Certifications</h2>
+            <div class="section">
+                <h3>My badges</h3>
+                <p>You have earned and uploaded 0 badges</p>
+                <button>Import new badge</button>
+                <p>Currently, there are no badges uploaded to your profile. Begin your journey towards your certification goals or <a href="#">Upload your third-party badges</a> to impress your manager and peers with your accomplishments. Start preparing for your next certificate today!</p>
+            </div>
+            <div class="section">
+                <h3>Certification preparation</h3>
+                <p>You are preparing for 4 certifications</p>
+                <button>Explore certification preparation</button>
+            </div>
+        </div>
+
+        <div id="archived" class="tab-content">
+            <h2>Archived</h2>
+            <div class="archived-course">
+                <img src="" alt="Course image">
+                <h3>FPT_Corporate Social Responsibility Training 2024</h3>
+                <p>FSOFT Content Development</p>
+                <p>100% complete</p>
+            </div>
+            <div class="archived-course">
+                <img src="" alt="Course image">
+                <h3>FPT_Corporate Social Responsibility Training 2024</h3>
+                <p>FSOFT Content Development</p>
+                <p>100% complete</p>
+            </div>
+            <div class="archived-course">
+                <img src="" alt="Course image">
+                <h3>FPT_Corporate Social Responsibility Training 2024</h3>
+                <p>FSOFT Content Development</p>
+                <p>100% complete</p>
+            </div>
+        </div>
+
+        <div id="learning-tools" class="tab-content">
+            <h2>Learning Tools</h2>
+            <div class="tool">
+                <h3>Learning reminders</h3>
+                <p>You currently have no ongoing reminders.</p>
+                <a href="#">See more</a>
+            </div>
+            <div class="tool">
+                <h3>Reflections <span class="beta">Beta</span></h3>
+                <p>You have currently no recorded reflections on your learning journey.</p>
+            </div>
+        </div>
+        <div class="back-button" onclick="goBack()">
+            <i class="fas fa-arrow-left"></i> Back
+        </div>
+    </div>
+
+    <script src="js/lab5.js"></script>
+</body>
+</html>

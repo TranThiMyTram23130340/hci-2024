@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="menu">
+            <a href="index.html" class="home-link">Home</a>
+            <a href="about.html" class="about-link">About</a>
+            <a href="labs.html" class="labs-link">Tabs</a>
+        </div>
+
+        <!-- Fixed search bar -->
+        <div class="content">
+            <header>
+                <h1>BTS Music Group</h1>
+
+            </header>
+            <div class="search-bar">
+                <label for="member-search">Search for BTS member:</label>
+                <input type="text" id="member-search" name="member" list="bts-members"
+                    placeholder="Enter member's name..." oninput="searchMember()">
+                <datalist id="bts-members">
+                    <option value="RM">
+                    <option value="Jin">
+                    <option value="Suga">
+                    <option value="J-Hope">
+                    <option value="Jimin">
+                    <option value="V">
+                    <option value="Jungkook">
+                </datalist>
+            </div>
+
+            <div class="container">
+                <h3>Information about BTS members</h2>
+                    <div id="member-info" class="member-info">
+
+                        <p>Please enter the name of a BTS member to see detailed information.</p>
+                    </div>
+
+                    <!-- General introduction -->
+                    <div class="bts-info">
+                        <h3>General introduction about BTS:</h3>
+                        <p>BTS (Bangtan Sonyeondan) is a famous South Korean boy band formed by BigHit Entertainment in
+                            2013. With 7 members: RM, Jin, Suga, J-Hope, Jimin, V, and Jungkook, the group has become a
+                            global icon in the music industry. BTS stands out not only for their diverse music but also
+                            for their powerful messages about love, freedom, and social change.</p>
+                    </div>
+
+                    <!-- Notable albums -->
+                    <div class="bts-albums">
+                        <h3>Notable albums of BTS:</h3>
+                        <ul>
+                            <li><strong>Wings (2016):</strong> An album with diverse styles, including famous songs like
+                                "Blood Sweat & Tears" and "Fire".</li>
+                            <li><strong>Love Yourself: Tear (2018):</strong> A highly acclaimed album, featuring songs
+                                like "Singularity" and "Fake Love".</li>
+                            <li><strong>Map of the Soul: 7 (2020):</strong> An album containing signature songs like
+                                "On" and "Black Swan".</li>
+                            <li><strong>BE (2020):</strong> An inspiring album created during the pandemic, including
+                                "Dynamite" and "Life Goes On".</li>
+                        </ul>
+                    </div>
+
+                    <!-- Famous songs -->
+                    <div class="bts-songs">
+                        <h3>Famous songs of BTS:</h3>
+                        <ul>
+                            <li><strong>"Dynamite":</strong> A song that reached high positions on the Billboard Hot
+                                100, it is the first song by BTS to receive a Grammy certification.</li>
+                            <li><strong>"Butter":</strong> A lively pop song loved globally and broke many music
+                                records.</li>
+                            <li><strong>"Boy With Luv":</strong> Featuring Halsey, this song became one of the standout
+                                tracks in the group's career.</li>
+                            <li><strong>"Permission to Dance":</strong> A positive and accessible song, conveying
+                                messages of love and freedom.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Notable achievements -->
+                    <div class="bts-achievements">
+                        <h3>Notable achievements of BTS:</h3>
+                        <ul>
+                            <li>Received numerous international awards, including Billboard Music Awards and American
+                                Music Awards.</li>
+                            <li>Notable albums: <em>Wings</em>, <em>Love Yourself: Tear</em>, <em>Map of the Soul:
+                                    7</em>, <em>BE</em>.</li>
+                            <li> Achieved success with famous songs like "Dynamite", "Butter", "Boy With Luv", and
+                                "Permission to Dance".</li>
+                            <li>Nominated for Grammy in major categories.</li>
+                            <li>Recognized as a global artist with a profound cultural impact.</li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/index.js"></script>
+
+
+
+</body>
+
+</html>

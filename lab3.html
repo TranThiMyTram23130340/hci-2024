@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share learning materials</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/lab3.css">
+</head>
+
+<body>
+    <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="labs.html">Tabs</a>
+    </div>
+
+    <div class="container">
+        <div class="subjects">
+            <h2>Subiects</h2>
+            <ul>
+                <li><a href="#" onclick="showContent('math')"><i class="fas fa-calculator"></i> Advanced Math</a></li>
+                <li><a href="#" onclick="showContent('c-programming')"><i class="fas fa-code"></i> C Programming</a>
+                </li>
+                <li><a href="#" onclick="showContent('graph-theory')"><i class="fas fa-project-diagram"></i> Graph
+                        Theory</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <div id="math" class="section active">
+                <div class="tabs">
+                    <button class="tab-link active" onclick="openSection(event, 'lectures-math')"><i
+                            class="fas fa-chalkboard-teacher"></i> Lecture</button>
+                    <button class="tab-link" onclick="openSection(event, 'exercises-math')"><i
+                            class="fas fa-pencil-alt"></i> Exercises</button>
+                    <button class="tab-link" onclick="openSection(event, 'references-math')"><i class="fas fa-book"></i>
+                        References</button>
+                </div>
+
+                <div id="lectures-math" class="section active">
+                    <h3>Lecture (PDF)</h3>
+                    <ul>
+                        <li><a href="#" onclick="showPDF('https://thi247.com/sach-giao-khoa-vat-li-8/')"><i
+                                    class="fas fa-file-pdf"></i> Lecture 1: About Calculus</a></li>
+                        <li><a href="#" onclick="showPDF('pdfs/math_lecture2.pdf')"><i class="fas fa-file-pdf"></i>
+                                Lecture 2: Functions And Derivatives</a></li>
+                        <li><a href="#" onclick="showPDF('pdfs/math_lecture3.pdf')"><i class="fas fa-file-pdf"></i>
+                                Lecture 3: Integral And Application</a></li>
+                    </ul>
+                    <iframe id="pdf-viewer" class="pdf-viewer"></iframe>
+                </div>
+
+                <div id="exercises-math" class="section">
+                    <h3>Exercises (PDF)</h3>
+                    <ul>
+                        <li><a href="#" onclick="showPDF('pdfs/math_exercise1.pdf')"><i class="fas fa-file-pdf"></i>
+                                Exercises 1: Functions And Limits</a></li>
+                        <li><a href="#" onclick="showPDF('pdfs/math_exercise2.pdf')"><i class="fas fa-file-pdf"></i>
+                                Exercises 2: Derivatives And Applications</a></li>
+                    </ul>
+                    <iframe id="pdf-viewer" class="pdf-viewer"></iframe>
+                </div>
+
+                <div id="references-math" class="section">
+                    <h3>References (PDF)</h3>
+                    <ul>
+                        <li><a href="#" onclick="showPDF('pdfs/math_reference1.pdf')"><i class="fas fa-file-pdf"></i>
+                                Advanced Mathematics Curriculum - Nguyen Dinh Tri</a></li>
+                        <li><a href="#" onclick="showPDF('pdfs/math_reference2.pdf')"><i class="fas fa-file-pdf"></i>
+                                Calculus Workbook - Polytechnic University</a></li>
+                    </ul>
+                    <iframe id="pdf-viewer" class="pdf-viewer"></iframe>
+                </div>
+            </div>
+
+            <div id="c-programming" class="section">
+                <div class="tabs">
+                    <button class="tab-link active" onclick="openSection(event, 'lectures-c')"><i
+                            class="fas fa-chalkboard-teacher"></i> Lecture</button>
+                    <button class="tab-link" onclick="openSection(event, 'exercises-c')"><i
+                            class="fas fa-pencil-alt"></i> Exercises</button>
+                    <button class="tab-link" onclick="openSection(event, 'references-c')"><i class="fas fa-book"></i>
+                        References</button>
+                </div>
+
+                <div id="lectures-c" class="section active">
+                    <h3>Lecture (PDF)</h3>
+                    <ul>
+                        <li><a href="#" onclick="showPDF('pdfs/c_programming_lecture1.pdf')"><i
+                                    class="fas fa-file-pdf"></i> Lecture 1: Introduction To C Language</a></li>
+                    </ul>
+                    <iframe id="pdf-viewer" class="pdf-viewer"></iframe>
+                </div>
+
+                <div id="exercises-c" class="section">
+                    <h3>Exercises (PDF)</h3>
+                    <ul>
+                        <li><a href="#" onclick="showPDF('pdfs/c_exercise1.pdf')"><i class="fas fa-file-pdf"></i>
+                                Exercises 1: Structure And Variables In C</a></li>
+                    </ul>
+                    <iframe id="pdf-viewer" class="pdf-viewer"></iframe>
+                </div>
+
+                <div id="references-c" class="section">
+                    <h3>References (PDF)</h3>
+                    <ul>
+                        <li><a href="#" onclick="showPDF('pdfs/c_reference1.pdf')"><i class="fas fa-file-pdf"></i> C
+                                Programming Syllabus - Tran Van A</a></li>
+                    </ul>
+                    <iframe id="pdf-viewer" class="pdf-viewer"></iframe>
+                </div>
+            </div>
+
+            <div id="graph-theory" class="section">
+                <div class="tabs">
+                    <button class="tab-link active" onclick="openSection(event, 'lectures-graph')"><i
+                            class="fas fa-chalkboard-teacher"></i> Lecture</button>
+                    <button class="tab-link" onclick="openSection(event, 'exercises-graph')"><i
+                            class="fas fa-pencil-alt"></i> Exercises</button>
+                    <button class="tab-link" onclick="openSection(event, 'references-graph')"><i
+                            class="fas fa-book"></i> References</button>
+                </div>
+
+                <div id="lectures-graph" class="section active">
+                    <h3>Lecture (PDF)</h3>
+                    <ul>
+                        <li><a href="#" onclick="showPDF('pdfs/graph_theory_lecture1.pdf')"><i
+                                    class="fas fa-file-pdf"></i> Lecture 1: Introduction To Graph Theory</a></li>
+                    </ul>
+                    <iframe id="pdf-viewer" class="pdf-viewer"></iframe>
+                </div>
+
+                <div id="exercises-graph" class="section">
+                    <h3>Exercises (PDF)</h3>
+                    <ul>
+                        <li><a href="#" onclick="showPDF('pdfs/graph_exercise1.pdf')"><i class="fas fa-file-pdf"></i>
+                                Exercises 1: Graphs And Graph Problems</a></li>
+                    </ul>
+                    <iframe id="pdf-viewer" class="pdf-viewer"></iframe>
+                </div>
+
+                <div id="references-graph" class="section">
+                    <h3>References (PDF)</h3>
+                    <ul>
+                        <li><a href="#" onclick="showPDF('pdfs/graph_reference1.pdf')"><i class="fas fa-file-pdf"></i>
+                                Graph Theory Syllabus - Nguyen Van B</a></li>
+                    </ul>
+                    <iframe id="pdf-viewer" class="pdf-viewer"></iframe>
+                </div>
+            </div>
+            <div class="back-button" onclick="goBack()">
+                <i class="fas fa-arrow-left"></i> Back
+            </div>
+        </div>
+    </div>
+
+    <script src="js/lab3.js"></script>
+</body>
+
+</html>

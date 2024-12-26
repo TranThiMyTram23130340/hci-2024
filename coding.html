@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding</title>
+    <link rel="stylesheet" href="css/coding.css">
+</head>
+<body>
+    <div class="container">
+
+        <div class="menu">
+            <a href="index.html" class="home-link">Home</a>
+            <a href="about.html" class="about-link">About</a>
+            <a href="labs.html" class="labs-link">Tabs</a>
+        </div>
+
+        <!-- Màn hình môi trường lập trình -->
+        <section id="codingScreen">
+            <h1 id="exerciseTitle">Exercises</h1>
+            <p id="exerciseDescription">The assignment description will be displayed here.</p>
+            <textarea id="codeEditor" rows="20" placeholder="Write code here..." required autofocus></textarea>
+
+            <div class="editor-actions">
+                <button onclick="runCode()">Run Code</button>
+                <button onclick="submitCode()">Submit</button>
+                <button onclick="clearCode()">Remove code</button>
+                <button onclick="goBack()">Back</button>
+            </div>
+
+            <!-- Kết quả -->
+            <div id="results">
+                <h2>Test Results</h2>
+                <p>Condition: <span id="status">Not yet running</span></p>
+                <div id="testCases">
+                    <!-- Hiển thị kết quả kiểm tra tại đây -->
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="js/coding.js"></script>
+
+</body>
+</html>
