@@ -1,0 +1,74 @@
+body {
+    background-color: #FBF7F7; 
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex; /* Sử dụng Flexbox */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    height: 100vh; /* Chiều cao 100% của viewport */
+}
+
+.menu {
+    position: fixed; /* Cố định thanh menu */
+    top: 0; /* Đặt ở đầu trang */
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #f6b1c8; /* Màu nền của thanh menu */
+    padding: 15px 0; /* Khoảng cách bên trong */
+    z-index: 1000; /* Đảm bảo thanh menu nằm trên các phần tử khác */
+}
+
+.menu a {
+    margin: 0 10px;
+    padding: 10px 15px;
+    text-decoration: none;
+    background-color: #ff6699;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    color: white; /* Màu chữ */
+}
+
+.menu a:hover {
+    background-color: #cc0066;
+}
+
+.container {
+    background-color: #FFE5EA; 
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%; /* Chiều rộng của container là 80% */
+    max-width: 600px; /* Đặt chiều rộng tối đa nếu cần */
+    text-align: center; /* Căn giữa nội dung trong container */
+}
+
+h2 {
+    color: #F3AAB5;
+}
+
+#results {
+    margin-top: 20px;
+}
+
+#score {
+    font-size: 24px; /* Kích thước chữ cho điểm số */
+    margin-bottom: 20px; /* Khoảng cách dưới điểm số */
+}
+
+button {
+    background-color: #ff6699; /* Màu nền cho nút */
+    color: white; /* Màu chữ cho nút */
+    padding: 10px 0; /* Padding cho nút */
+    border: none; /* Không có đường viền */
+    border-radius: 5px; /* Bo tròn góc cho nút */
+    cursor: pointer; /* Con trỏ chuột khi di chuột qua nút */
+    transition: background-color 0.3s; /* Hiệu ứng chuyển màu nền khi hover */
+    width: 600px; /* Đảm bảo nút chiếm 90% chiều rộng của phần hiển thị nội dung */
+    max-width: 600px; /* Đặt chiều rộng tối đa cho nút */
+    margin: 20px auto 0; /* Căn giữa nút và thêm khoảng cách trên */
+}
+
+button:hover {
+    background-color: #cc0066; /* Màu nền khi hover */
+}

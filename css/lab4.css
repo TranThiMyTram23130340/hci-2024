@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    padding-top: 70px;
+    /* Khoảng trống để menu không che nội dung */
+}
+
+.menu {
+    position: fixed;
+    /* Cố định thanh menu */
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #f6b1c8;
+    /* Màu nền của thanh menu */
+    padding: 15px 0;
+    /* Khoảng cách bên trong */
+    z-index: 1000;
+    /* Đảm bảo thanh menu nằm trên các phần tử khác */
+}
+
+.menu a {
+    margin: 0 10px;
+    padding: 10px 15px;
+    text-decoration: none;
+    background-color: #ff6699;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    color: white;
+    /* Màu chữ */
+}
+
+.menu a:hover {
+    background-color: #cc0066;
+}
+
+
+.header {
+    
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    /* Thu nhỏ padding */
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+}
+
+.tab {
+    padding: 5px;
+    /* Thu nhỏ padding */
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    /* Thu nhỏ font chữ */
+}
+
+.tab i {
+    margin-right: 5px;
+}
+
+.tab:hover {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+
+.header-btn {
+    padding: 5px 10px;
+    /* Thu nhỏ padding */
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    /* Thu nhỏ font chữ */
+}
+
+.header-btn i {
+    margin-right: 5px;
+}
+
+.header-btn:hover {
+    background-color: #0056b3;
+}
+
+.main-content {
+    display: flex;
+    margin: 10px;
+    /* Thu nhỏ margin */
+    gap: 50px;
+    /* Thêm khoảng cách giữa hai cột */
+}
+
+.left-column {
+    flex: 1.5;
+}
+
+.right-column {
+    flex: 1;
+}
+
+.video-container video {
+    width: 100%;
+    /* Giảm kích thước video */
+    border-radius: 8px;
+}
+
+.video-tabs {
+    display: flex;
+    margin: 10px 0;
+    /* Thu nhỏ margin */
+    background-color: #fff;
+    padding: 5px;
+    /* Thu nhỏ padding */
+    border-radius: 8px;
+}
+
+.video-tab {
+    flex: 1;
+    text-align: center;
+    padding: 5px;
+    /* Thu nhỏ padding */
+    text-decoration: none;
+    color: #333;
+    background-color: #f0f0f0;
+    margin-right: 5px;
+    border-radius: 8px;
+    font-size: 16px;
+    /* Thu nhỏ font chữ */
+}
+
+.video-tab:hover {
+    background-color: #ddd;
+}
+
+.video-title h2 {
+    font-size: 20px;
+    /* Thu nhỏ font chữ */
+    margin: 10px 0;
+}
+
+.video-info {
+    padding: 0 10px;
+    /* Thu nhỏ padding */
+    margin-bottom: 10px;
+    /* Thu nhỏ khoảng cách */
+    font-size: 16px;
+    /* Thu nhỏ font chữ */
+}
+
+.update-info {
+    padding: 0 10px;
+    font-size: 16px;
+    /* Thu nhỏ font chữ */
+}
+
+.what-you-learn {
+    padding: 10px;
+    font-size: 16px;
+    /* Thu nhỏ font chữ */
+    margin-top: 10px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.learn-grid {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.learn-grid div {
+    width: 48%;
+    display: flex;
+    align-items: center;
+}
+
+.learn-grid div i {
+    font-size: 14px;
+    /* Thu nhỏ kích thước biểu tượng */
+    margin-right: 5px;
+}
+
+.right-column h3 {
+    font-size: 16px;
+    /* Thu nhỏ font chữ */
+    margin-bottom: 10px;
+}
+
+.right-column p {
+    font-size: 14px;
+    /* Thu nhỏ font chữ */
+    margin-bottom: 10px;
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+    /* Thu nhỏ padding */
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.section img {
+    width: 80px;
+    /* Thu nhỏ ảnh */
+    height: 60px;
+    /* Thu nhỏ ảnh */
+    margin-right: 10px;
+}
+
+.section p {
+    font-size: 14px;
+    /* Thu nhỏ font chữ */
+}
+
+.video-info .rating {
+    display: flex;
+    align-items: center;
+}
+
+.video-info .rating i {
+    color: gold;
+    /* Màu vàng cho sao */
+    margin-right: 3px;
+}

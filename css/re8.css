@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FBF7F7;
+    color: #333;
+}
+
+.menu {
+    position: fixed; /* Cố định thanh menu */
+    top: 0; /* Đặt ở đầu trang */
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #f6b1c8; /* Màu nền của thanh menu */
+    padding: 15px 0; /* Khoảng cách bên trong */
+    z-index: 1000; /* Đảm bảo thanh menu nằm trên các phần tử khác */
+}
+
+.menu a {
+    margin: 0 10px;
+    padding: 10px 15px;
+    text-decoration: none;
+    background-color: #ff6699;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    color: white; /* Màu chữ */
+}
+
+.menu a:hover {
+    background-color: #cc0066;
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: #0c253e;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 70px;
+}
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+/* Coderbyte logo styling */
+.logo {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.logo .icon {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin-right: 10px;
+}
+.logo .icon span {
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Main content styling */
+.main-content {
+    text-align: center;
+    padding: 60px 20px;
+}
+.main-content h1 {
+    font-size: 24px;
+    color: #00b17d;
+    font-weight: bold;
+}
+.main-content h2 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+}
+.main-content p {
+    color: #666;
+    font-size: 16px;
+    max-width: 600px;
+    margin: 15px auto;
+}
+
+/* Input and button styling */
+.email-input {
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 300px;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+.start-trial-btn {
+    padding: 15px 30px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: #00b17d;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.main-content a {
+    color: #666;
+    text-decoration: none;
+    display: block;
+    margin-top: 20px;
+}
+
+/* Skills section styling */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+}
+.skill {
+    padding: 8px 12px;
+    background-color: #f7f8fb;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+.skill i {
+    font-size: 18px;
+    margin-right: 8px;
+}
+
+.back-button {
+    position: fixed;
+    /* Đặt cố định nút để nó luôn hiển thị */
+    bottom: 20px;
+    /* Cách đáy màn hình */
+    left: 20px;
+    /* Cách cạnh trái màn hình */
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.back-button i {
+    margin-right: 10px;
+}
+
+.back-button:hover {
+    background-color: #34495e;
+}

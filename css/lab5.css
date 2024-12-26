@@ -1,0 +1,260 @@
+/* Thiết lập chung */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FBF7F7;
+    padding-top: 70px;
+    /* Khoảng trống để menu không che nội dung */
+}
+
+.menu {
+    position: fixed;
+    /* Cố định thanh menu */
+    top: 0;
+    /* Đặt ở đầu trang */
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #f6b1c8;
+    /* Màu nền của thanh menu */
+    padding: 15px 0;
+    /* Khoảng cách bên trong */
+    z-index: 1000;
+    /* Đảm bảo thanh menu nằm trên các phần tử khác */
+}
+
+.menu a {
+    margin: 0 10px;
+    padding: 10px 15px;
+    text-decoration: none;
+    background-color: #ff6699;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    color: white;
+    /* Màu chữ */
+}
+
+.menu a:hover {
+    background-color: #cc0066;
+}
+
+header {
+    background-color: #d991ab;
+    color: white;
+    padding: 20px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.header-info {
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+.header-info a {
+    color: #c0b2d8;
+    /* Màu nhạt cho liên kết */
+    text-decoration: none;
+}
+
+header a:hover {
+    color: #ffffff;
+}
+
+h1 {
+    color: #fff;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    background-color: #d991ab;
+    /* Màu tím nhạt lạnh cho thanh điều hướng */
+    padding: 10px;
+    gap: 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #2c3e50;
+    /* Màu tím sáng hơn khi hover */
+    color: white;
+}
+
+.tab-link.active {
+    background-color: #ffffff;
+    color: #0a0a0a;
+    /* Màu chủ đạo cho tab đang chọn */
+    font-weight: bold;
+}
+
+/* Nội dung chính */
+.content {
+    padding: 20px;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.section {
+    border: 1px solid #d1c4e9;
+    /* Viền tím nhạt */
+    background-color: #ffffff;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+.tool {
+    border: 1px solid #d1c4e9;
+    background-color: #f3e5f5;
+    /* Màu tím nhạt cho nền */
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    color: #333;
+}
+
+/* Nhãn "beta" */
+.beta,
+.Import new bagde {
+    background-color: #0a0a0a;
+    /* Màu chủ đạo tím đậm */
+    color: white;
+    padding: 2px 8px;
+    font-size: 0.8em;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+/* Nội dung khoá học đã lưu trữ */
+.archived-course {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #f3e5f5;
+    /* Màu nền tím nhạt */
+    padding: 15px;
+    border: 1px solid #d1c4e9;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+    color: #333;
+}
+
+/* Thêm icon vào menu và các phần khác */
+.icon {
+    margin-right: 5px;
+}
+
+/* Các biểu tượng */
+.icon-home::before {
+    content: "🏠";
+}
+
+.icon-info::before {
+    content: "ℹ️";
+}
+
+.icon-archive::before {
+    content: "📦";
+}
+
+.icon-tools::before {
+    content: "🛠️";
+}
+
+.icon-learning::before {
+    content: "📚";
+}
+
+/* Áp dụng icon vào các phần tử cụ thể */
+nav ul li:first-child a::before {
+    content: "🏠";
+}
+
+nav ul li:nth-child(2) a::before {
+    content: "ℹ️";
+}
+
+nav ul li:nth-child(3) a::before {
+    content: "📦";
+}
+
+nav ul li:nth-child(4) a::before {
+    content: "📚";
+}
+
+/* Thêm icon vào nội dung các tab */
+.tab-content h2::before {
+    content: "📖";
+    /* Biểu tượng sách cho tất cả các tab */
+    margin-right: 5px;
+}
+
+.section h3::before {
+    content: "🏅";
+    /* Biểu tượng huy chương cho các tiêu đề trong tab Certifications */
+    margin-right: 5px;
+}
+
+.tool h3::before {
+    content: "🛠️";
+    /* Biểu tượng công cụ cho tiêu đề trong tab Learning Tools */
+    margin-right: 5px;
+}
+
+
+.back-button {
+    position: fixed;
+    /* Đặt cố định nút để nó luôn hiển thị */
+    bottom: 20px;
+    /* Cách đáy màn hình */
+    left: 20px;
+    /* Cách cạnh trái màn hình */
+    background-color: #ff6699;
+    color: #ecf0f1;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.back-button i {
+    margin-right: 10px;
+}
+
+.back-button:hover {
+    background-color: #cc0066;
+}
