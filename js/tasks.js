@@ -1,5 +1,5 @@
 function startExercise(language, exerciseId) {
-    window.location.href = `Coding.html?lang=${language}&id=${exerciseId}`; // Chuyển đến trang coding
+    window.location.href = `coding.html?lang=${language}&id=${exerciseId}`; // Chuyển đến trang coding
 }
 
 function filterExercises() {
