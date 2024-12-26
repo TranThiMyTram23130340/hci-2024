@@ -3,100 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tasks</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Tasks</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/tasks.css">
 </head>
 <body>
     <div class="container">
-       
         <div class="menu">
             <a href="index.html" class="home-link">Home</a>
             <a href="about.html" class="about-link">About</a>
             <a href="labs.html" class="labs-link">Tabs</a>
         </div>
         <section id="dashboerdScreen">
-            <h1>Các bài tập có sẵn</h1>
+            <h1>Available exercises</h1>
             <div class='filter-section'>
-                <label for="languageFilter">Lọc theo ngôn ngữ:</label>
-                <select id="languageFilter" onchange="filterExcersive()">
+                <label for="languageFilter">Filter by language:</label>
+                <select id="languageFilter" onchange="filterExercises()">
                     <option value="all">All</option>
                     <option value="c">C</option>
                     <option value="python">Python</option>
                     <option value="java">Java</option>
                 </select>
-                <input type="text" id="search" placeholder="Tìm kiếm bài tập" oninput="searchExercise()">
-
             </div>
             <section id="exerciseList">
-                <h2>Ngôn ngữ C</h2>
-                <div class="exercise">
-                    <h3>Bài tập 1: Kiểm tra số nguyên tố</h3>
-                    <p>Độ khó: Dễ | Giới hạn thời gian: 30 phút | Điểm: 10</p>
-                    <button onclick="startExercise('C',1)">Bắt đầu làm bài</button>
+                <h2>C Language</h2>
+                <div class="exercise" data-language="c">
+                    <h3>Exercise 1: Examining Prime Numbers</h3>
+                    <p>Difficulty: Easy | Time limit: 30 minutes | Points: 10</p>
+                    <button onclick="startExercise('C',1)">Start doing the test</button>
                 </div>
-                <div class="exercise">
-                    <h3>Bài tập 2: Tính giai thừa</h3>
-                    <p>Độ khó: Dễ | Giới hạn thời gian: 30 phút | Điểm: 10</p>
-                    <button onclick="startExercise('C',2)">Bắt đầu làm bài</button>
-                </div>
-
-                <h2>Ngôn ngữ Python</h2>
-                <div class="exercise">
-                    <h3>Bài tập 1: Kiểm tra số chẵn</h3>
-                    <p>Độ khó: Dễ | Giới hạn thời gian: 10 phút | Điểm: 10</p>
-                    <button onclick="startExercise('C',1)">Bắt đầu làm bài</button>
-                </div>
-                <div class="exercise">
-                    <h3>Bài tập 2: Đếm số từ trong chuỗi</h3>
-                    <p>Độ khó: Trung bình | Giới hạn thời gian: 40 phút | Điểm: 10</p>
-                    <button onclick="startExercise('C',2)">Bắt đầu làm bài</button>
+                <div class="exercise" data-language="c">
+                    <h3>Exercise 2: Factorial calculation</h3>
+                    <p>Difficulty: Easy | Time limit: 30 minutes | Points: 10</p>
+                    <button onclick="startExercise('C',2)">Start doing the test</button>
                 </div>
 
-                <h2>Ngôn ngữ Java</h2>
-                <div class="exercise">
-                    <h3>Bài tập 1: Tính chuỗi số</h3>
-                    <p>Độ khó: Dễ | Giới hạn thời gian: 20 phút | Điểm: 10</p>
-                    <button onclick="startExercise('C',1)">Bắt đầu làm bài</button>
+                <h2>Python Language</h2>
+                <div class="exercise" data-language="python">
+                    <h3>Exercise 1: Checking even numbers</h3>
+                    <p>Difficulty: Easy | Time limit: 10 minutes | Points: 10</p>
+                    <button onclick="startExercise('Python',1)">Start doing the test</button>
                 </div>
-                <div class="exercise">
-                    <h3>Bài tập 2: kiểm tra đối xứng</h3>
-                    <p>Độ khó: Khó | Giới hạn thời gian: 50 phút | Điểm: 10</p>
-                    <button onclick="startExercise('C',2)">Bắt đầu làm bài</button>
+                <div class="exercise" data-language="python">
+                    <h3>Exercise 2: Counting the number of words in a sequence</h3>
+                    <p>Difficulty: Moderate | Time limit: 40 minutes | Points: 10</p>
+                    <button onclick="startExercise('Python',2)">Start doing the test</button>
                 </div>
 
+                <h2>Java Language</h2>
+                <div class="exercise" data-language="java">
+                    <h3>Exercise 1: Calculate the number sequence</h3>
+                    <p>Difficulty: Easy | Time limit: 20 minutes | Points: 10</p>
+                    <button onclick="startExercise('Java',1)">Start doing the test</button>
+                </div>
+                <div class="exercise" data-language="java">
+                    <h3>Exercise 2: Symmetry test</h3>
+                    <p>Difficulty: Hard | Time limit: 50 minutes | Points: 10</p>
+                    <button onclick="startExercise('Java',2)">Start doing the test</button>
+                </div>
             </section>
-            
         </section>
+        <div class="back-button" onclick="goBack()">
+            <i class="fas fa-arrow-left"></i> Back
+        </div>
     </div>
 
-    <script>
-         function startExercise(language, exerciseId) {
-            window.location.href = `Coding.html?lang=${language}&id=${exerciseId}`; // Chuyển đến trang coding
-        }
-
-        function filterExercises() {
-            const filter = document.getElementById('languageFilter').value;
-            const exercises = document.querySelectorAll('.exercise');
-            exercises.forEach(exercise => {
-                if (filter === 'all' || exercise.innerHTML.toLowerCase().includes(filter)) {
-                    exercise.style.display = 'block';
-                } else {
-                    exercise.style.display = 'none';
-                }
-            });
-        }
-
-        function searchExercises() {
-            const searchValue = document.getElementById('search').value.toLowerCase();
-            const exercises = document.querySelectorAll('.exercise');
-            exercises.forEach(exercise => {
-                if (exercise.innerHTML.toLowerCase().includes(searchValue)) {
-                    exercise.style.display = 'block';
-                } else {
-                    exercise.style.display = 'none';
-                }
-            });
-        }
+    <script src="js/tasks.js">
+        
     </script>
 </body>
 </html>
