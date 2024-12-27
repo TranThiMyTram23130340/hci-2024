@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    padding-top: 70px;
+}
+
+.menu {
+    position: fixed;
+    /* Cố định thanh menu */
+    top: 0;
+    /* Đặt ở đầu trang */
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #f6b1c8;
+    /* Màu nền của thanh menu */
+    padding: 15px 0;
+    /* Khoảng cách bên trong */
+    z-index: 1000;
+    /* Đảm bảo thanh menu nằm trên các phần tử khác */
+}
+
+.menu a {
+    margin: 0 10px;
+    padding: 10px 15px;
+    text-decoration: none;
+    background-color: #ff6699;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    color: white;
+    /* Màu chữ */
+}
+
+.menu a:hover {
+    background-color: #cc0066;
+}
+
+.content {
+    padding: 50px;
+    background: #ffffff;
+    margin: 20px auto;
+    max-width: 90%;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.8s ease-out;
+}
+
+.content h1 {
+    color: #d94f70;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+
+.content h3 {
+    color: #3d84a8;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.content ul {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.content ul li {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #555;
+    position: relative;
+    padding: 15px 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+}
+
+.content ul li:hover {
+    background: linear-gradient(120deg, #6bdee6, #66a6ff);
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.content ul li::before {
+    content: "•";
+    position: absolute;
+    left: 10px;
+    color: #ff6699;
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+.content li a {
+    color: inherit;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.content li a:hover {
+    color: #cc0066;
+    text-decoration: underline;
+}
+
+.evaluation {
+    font-size: 18px;
+    color: #333;
+    font-style: italic;
+    margin-top: 20px;
+}
+
+/* Hiệu ứng khi tải nội dung */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
